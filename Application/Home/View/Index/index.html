@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第53届运动会</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/uikit-2.4.0/css/uikit.almost-flat.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/test.css">
+    <script src="__PUBLIC__/web/js/jquery-1.4.2.min.js"></script>
+    <script src="__PUBLIC__/web/js/jQuery-easing.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/dl.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/nav_fix_index.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/jquery.easing.1.3.js"></script>
+    <!--图片滚动部分插件-->
+    <link rel="stylesheet" href="__PUBLIC__/web/slider/css/nivo-slider.css" type="text/css" />
+    <link rel="stylesheet" href="__PUBLIC__/web/slider/css/style.css" type="text/css" />
+    <script src="__PUBLIC__/web/slider/js/jquery.nivo.slider.pack.js"></script>
+    <script src="__PUBLIC__/web/slider/js/load.js"></script>
+    <!--精彩图片部分插件-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/Smooth/css/smoothDivScroll.css" />
+    <script src="__PUBLIC__/web/Smooth/js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="__PUBLIC__/web/Smooth/js/jquery.mousewheel.min.js "></script>
+    <script src="__PUBLIC__/web/Smooth/js/jquery.kinetic.min.js"></script>
+    <script src="__PUBLIC__/web/Smooth/js/jquery.smoothdivscroll-1.3-min.js"></script>
+    <script src="__PUBLIC__/web/Smooth/js/load.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            floatHere();
+            var h = $(window).height();
+            var w = $(window).width();
+            var x = 0;
+
+            $(window).scroll(function () {
+                x++;
+                if (x == 1) {
+                    $("html,body").animate({
+                        scrollTop: h,
+                        easing: "easeInOutBack"
+                    });
+                }
+                ;
+            });
+        });
+        function floatHere() {
+            var h = $(window).height();
+            var w = $(window).width();
+            // $('header').css({'width':w});
+            $("header").find("#sch_logo").delay(700).animate({
+                left: 0.5 * w,
+                top: 0.059 * h,
+                duration: "2330",
+                easing: "easeInOutQuad",
+            }, function () {
+                $('#sch_logo').css({'left': '50%'});
+            });
+            $("header").find("#e_logo").delay(500).animate({
+                left: 0.5 * w,
+                top: 0.2245 * h,
+                duration: "2330",
+                easing: "easeInOutQuad"
+            }, function () {
+                $('#e_logo').css({'left': '50%'});
+            });
+
+            // $('header').css({'height':1.0268*h});
+            $("header").find("#down_arrow").delay(1100).animate({
+                left: 0.5 * w,
+                bottom: '10px',
+                duration: "2330",
+                easing: "easeInOutQuad"
+            }, function () {
+                $('#down_arrow').css({'left': '50%'});
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="__PUBLIC__/web/images/sch_logo.gif" id="sch_logo" class="ad"><br>
+        <img src="__PUBLIC__/web/images/eeyes_logo.png" id="e_logo" class="ab"><br>
+        <img src="__PUBLIC__/web/images/title.gif" id="title">
+        <img src="__PUBLIC__/web/images/down_arrow.png" width="100px" id="down_arrow" onclick="click_scroll();">
+        <a id="anchor_scroll" href="#pos" style="display:none">点击这里本页跳转</a>
+    </header>
+    <nav id="pos">
+        <ul>
+            <li><a href="{:U('index')}">首页</a></li>
+            <li><a href="{:U('News/Index/news')}">新闻</a></li>
+            <li><a href="{:U('News/Index/timetable')}">赛程</a></li>
+            <li><a href="{:U('News/Index/result')}">赛果</a></li>
+            <li><a href="{:U('News/Index/stars')}">人物</a></li>
+            <li><a href="{:U('News/Index/picture')}">图说</a></li>
+            <li><a href="http://v.qq.com/vplus/0f783012f40414d7b87401b4530cff9a/foldervideos/nk10000018ejunk">视频</a></li>
+            <li><a href="{:U('News/Index/medal')}">奖牌榜</a></li>
+            <li><a href="http://zq.xjtu.edu.cn/tyzx/">体育中心</a></li>
+        </ul>
+    </nav>
+    <div class="uk-clearfix"></div>
+    <div id="main_wrapper">
+        <div class="uk-grid uk-container-center cleared mh265">
+            <!--图片滚动-->
+            <div id="wrapper" class="uk-width-2-5">
+                <div id="slider-wrapper">
+                    <div id="slider" class="nivoSlider">
+                        <FOR start="0" end="$indexPicLeftNum" name="i">
+                            <a href=""><img src="{$indexPicLeftPics[$i]}" title="{$indexPicLeftDescriptions[$i]}" /></a>
+                        </FOR>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--最新新闻-->
+            <div class="uk-width-2-5">
+                <div class="uk-float-left">
+                    <h4 class="uk-pannel-title"><a class="uk-text-danger" href="{:U('News/Index/article').'&id='.$hotNews['id']}">{$hotNews['title']}</a></h4>
+                    <div class="uk-text-small uk-float-left">
+                        <div class="uk-float-left"><a href="{:U('News/Index/article').'&id='.$randomNews1['0']['id']}">{$randomNews1['0']['title']}</a></div>
+                        <div class="uk-float-left uk-margin-left"><a href="{:U('News/Index/article').'&id='.$randomNews1['1']['id']}">{$randomNews1['1']['title']}</a></div>
+                    </div>
+                    <div class="uk-text-small uk-float-left">
+                        <div class="uk-float-left"><a href="{:U('News/Index/article').'&id='.$randomNews1['2']['id']}">{$randomNews1['2']['title']}</a></div>
+                        <div class="uk-float-left uk-margin-left"><a href="{:U('News/Index/article').'&id='.$randomNews1['3']['id']}">{$randomNews1['3']['title']}</a></div>
+
+                    </div>
+                </div>
+
+                <div class="uk-float-left uk-margin-top">
+                    <ul class="uk-list">
+                        <FOREACH name="randomNews2" item="news">
+                            <li><a href="{:U('News/Index/article').'&id='.$news['id']}">{$news.title}</a></li>
+                        </FOREACH>
+                    </ul>
+                </div>
+            </div>
+            <!--奖牌榜-->
+            <div class="uk-width-1-5 cleared">
+                <table class="uk-table medal">
+                    <tr class="special">
+                        <th>单位</th>
+                        <th>金</th>
+                        <th>银</th>
+                        <th>铜</th>
+                    </tr>
+                    <FOREACH name="medal" item="m">
+                        <tr class="even">
+                            <td>{$m.name}</td>
+                            <td>{$m.gold}</td>
+                            <td>{$m.silver}</td>
+                            <td>{$m.copper}</td>
+                        </tr>
+                    </FOREACH>
+
+                </table>
+            </div>
+        </div>
+        <div class="uk-clearfix"></div>
+        <!--新闻与赛场花絮-->
+        <div class="uk-margin-top mh265">
+
+            <ul class="underline">
+                <li class="list-head"><a>新闻</a></li>
+                <ul class="news-list-head">
+                    <li class="news-list"><a href="{:U('News/Index/news').'&type=0&ctype=0'}">田赛新闻</a></li>
+                    <li class="news-list"><a href="{:U('News/Index/news').'&type=0&ctype=1'}">径赛新闻</a></li>
+                    <li class="news-list"><a href="{:U('News/Index/news').'&type=0&ctype=2'}">赛场花絮</a></li>
+                </ul>
+            </ul>
+
+            <div class="uk-grid uk-grid-width-1-3">
+                <!--田赛新闻-->
+                <div class="uk-float-left">
+                    <img class="icon" src="__PUBLIC__/web/images/2.png" /><a href="{:U('News/Index/news').'&type=0&ctype=0'}" class="news-subhead">田赛新闻</a>
+                    <ul class="uk-list">
+                        <FOREACH name="tiansaiNews" item="news">
+                            <li><a href="{:U('News/Index/article').'&id='.$news['id']}">{$news.title}</a></li>
+                        </FOREACH>
+                    </ul>
+                </div>
+                <!--径赛新闻-->
+                <div class="uk-float-left">
+                    <img class="icon" src="__PUBLIC__/web/images/2.png" /><a href="{:U('News/Index/news').'&type=0&ctype=1'}" class="news-subhead">径赛新闻</a>
+                    <ul class="uk-list">
+                        <FOREACH name="jingsaiNews" item="news">
+                            <li><a href="{:U('News/Index/article').'&id='.$news['id']}">{$news.title}</a></li>
+                        </FOREACH>
+                    </ul>
+                </div>
+                <!--赛场花絮-->
+                <div class="uk-float-left">
+                    <img class="icon" src="__PUBLIC__/web/images/2.png" /><a href="{:U('News/Index/news').'&type=0&ctype=2'}" class="news-subhead">赛场花絮</a>
+                    <ul class="uk-list">
+                        <FOREACH name="saichangNews" item="news">
+                            <li><a href="{:U('News/Index/article').'&id='.$news['id']}">{$news.title}</a></li>
+                        </FOREACH>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="uk-clearfix"></div>
+        <!--精彩图片-->
+        <div class="uk-margin-top mh265">
+            <ul class="underline">
+                <li class="list-head"><a href="{:U('News/Index/picture')}">精彩图片</a></li>
+            </ul>
+            <div id="makeMeScrollable">
+                <FOR start="0" end="$indexPicBottomNum" name="i">
+                    <div class="uk-overlay">
+                        <img src="{$indexPicBottomPics[$i]}" alt="精彩图片" id="field" />
+                        <div class="uk-overlay-caption">{$indexPicBottomDescriptions[$i]}</div>
+                    </div>
+
+                </FOR>
+
+
+            </div>
+        </div>
+        <div class="uk-clearfix"></div>
+
+        <!--成绩发布、运动之星-->
+        <div class="uk-margin-top mh265">
+            <ul class="underline">
+                <li class="list-head"><a>星光璀璨</a></li>
+                <ul class="news-list-head">
+                    <li class="news-list"><a href="{:U('News/Index/result')}">成绩发布</a></li>
+                    <li class="news-list"><a href="{:U('News/Index/stars')}">运动之星</a></li>
+                </ul>
+            </ul>
+            <div class="uk-float-left uk-width-1-3">
+                <img class="icon" src="__PUBLIC__/web/images/2.png" /><a href="{:U('News/Index/result')}" class="news-subhead">成绩发布</a>
+                <ul class="uk-list">
+                    <FOREACH name="sports" item="sport">
+                        <li><a href="{:U('News/Index/grade').'&id='.$sport['id']}">{$sport.title}项目成绩</a></li>
+                    </FOREACH>
+                </ul>
+            </div>
+            <div class="uk-float-left uk-width-2-3">
+                <img class="icon" src="__PUBLIC__/web/images/2.png" /><a href="{:U('News/Index/stars')}" class="news-subhead">运动之星</a>
+                <div class="uk-clearfix"></div>
+                <div class="uk-width-1-3 uk-margin-top uk-float-left">
+                    <div class="uk-margin-small-bottom uk-margin-right">
+                        <img src="{$hotAthlete['0']['firstpic']}" />
+                    </div>
+                    <a href="{:U('News/Index/article').'&id='.$hotAthlete['0']['id']}">{$hotAthlete['0']['title']}</a>
+                </div>
+                <div class="uk-width-1-3 uk-margin-top uk-float-left">
+                    <div class="uk-margin-small-bottom uk-margin-right">
+                        <img src="{$hotAthlete['1']['firstpic']}" />
+                    </div>
+                    <a href="{:U('News/Index/article').'&id='.$hotAthlete['1']['id']}">{$hotAthlete['1']['title']}</a>
+                </div>
+                <div class="uk-width-1-3 uk-margin-top uk-float-left pdl20">
+                    <ul class="uk-list">
+                        <FOREACH name="athletes" item="athlete">
+                            <li><a href="{:U('News/Index/article').'&id='.$athlete['id']}">{$athlete.title}</a></li>
+                        </FOREACH>
+                    </ul>
+                </div>
+            </div>
+            <div class="uk-clearfix"></div>
+        </div>
+    </div>
+
+    <footer class="uk-margin-large-top ">
+        <p class="uk-text-center">©2010-2015 e瞳网 eeYes.net 陕ICP备030061号</p>
+    </footer>
+    <script type="text/javascript">
+        function click_scroll() {
+            var scroll_offset = $("#pos").offset(); //得到pos这个div层的offset，包含两个值，top和left
+            $("body,html").animate({
+                scrollTop: scroll_offset.top //让body的scrollTop等于pos的top
+            }, 300);
+        }
+    </script>
+</body>
+</html>
