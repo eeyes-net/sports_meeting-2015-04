@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运动会成绩</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/grade.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/style1.css">
+    <script type="text/javascript" src="__PUBLIC__/web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/nav_fix.js"></script>
+</head>
+<body>
+    <header>
+
+    </header>
+    <nav id="pos">
+        <ul>
+            <li><a href="{:U('Home/Index/index')}">首页</a></li>
+            <li><a href="{:U('news')}">新闻</a></li>
+            <li><a href="{:U('timetable')}">赛程</a></li>
+            <li><a href="{:U('result')}">赛果</a></li>
+            <li><a href="{:U('stars')}">人物</a></li>
+            <li><a href="{:U('picture')}">图说</a></li>
+            <li><a href="http://v.qq.com/vplus/0f783012f40414d7b87401b4530cff9a/foldervideos/nk10000018ejunk">视频</a></li>
+            <li><a href="{:U('medal')}">奖牌榜</a></li>
+            <li><a href="http://zq.xjtu.edu.cn/tyzx/">体育中心</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="results">
+            <h2>{$sports.name}项目成绩</h2>
+            <p>西安交通大学五十一届田径运动会&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>{$sports.name}项目成绩</span>
+                <span class="dateshown">{$sports.year}年{$sports.month}月{$sports.day}日</span>
+            </p>
+            <table class="result-first">
+                <caption>{$sports.number}</caption>
+                <tr>
+                    <th>号码</th>
+                    <th>姓名</th>
+                    <th>单位</th>
+                    <th>序号</th>
+                    <th>成绩</th>
+                    <th>名次</th>
+                    <th>纪录</th>
+                    <th>达标</th>
+                    <th>备注</th>
+                </tr>
+                <FOREACH name="rankList" item="rank">
+                    <tr>
+                        <th>{$rank.number}</th>
+                        <th>{$rank.name}</th>
+                        <th>{$rank.college}</th>
+                        <th>{$rank.orders}</th>
+                        <th>{$rank.score}</th>
+                        <th>{$rank.rank}</th>
+                        <th>{$rank.record}</th>
+                        <th>{$rank.standard}</th>
+                        <th>{$rank.remark}</th>
+                    </tr>
+                </FOREACH>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p>© 2010-2015<a href="http://www.eeyes.net"> e瞳网 </a>eeYes .Net版权所有</p>
+    </footer>
+</body>
+</html>

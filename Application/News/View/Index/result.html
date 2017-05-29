@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>西安交通大学第53届运动会</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/style1.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/news.css">
+    <script type="text/javascript" src="__PUBLIC__/web/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/web/js/nav_fix.js"></script>
+    <script type="text/javascript">
+        function redirectNews(page) {
+            window.location.href = "{:U('news')}" + "&page=" + page;
+        }
+    </script>
+    <style type="text/css">
+        ul#indicator {
+            position: absolute;
+            bottom: 29px;
+            left: 65px;
+        }
+
+        ul#indicator li.deletename {
+            background: white;
+            color: #000000;
+            cursor: auto;
+            padding-left: 0px;
+            margin-left: 8px;
+        }
+
+        ul#indicator li:nth-child(2) {
+            padding-left: 8px;
+            margin-left: 8px;
+        }
+
+        ul#indicator li:nth-child(4) {
+            padding-left: 8px;
+            margin-left: 8px;
+            position: relative;
+            top: -2px;
+            left: -16px;
+        }
+
+        ul#indicator li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        ul#indicator select {
+            margin-left: 0px;
+            padding-left: 0px;
+        }
+
+        article {
+            padding-bottom: 35px;
+            min-height: 460px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <nav id="pos">
+        <ul>
+            <li><a href="{:U('Home/Index/index')}">首页</a></li>
+            <li><a href="{:U('news')}">新闻</a></li>
+            <li><a href="{:U('timetable')}">赛程</a></li>
+            <li><a href="{:U('result')}">赛果</a></li>
+            <li><a href="{:U('stars')}">人物</a></li>
+            <li><a href="{:U('picture')}">图说</a></li>
+            <li><a href="http://v.qq.com/vplus/0f783012f40414d7b87401b4530cff9a/foldervideos/nk10000018ejunk">视频</a></li>
+            <li><a href="{:U('medal')}">奖牌榜</a></li>
+            <li><a href="http://zq.xjtu.edu.cn/tyzx/">体育中心</a></li>
+        </ul>
+        </ul>
+    </nav>
+    <div class="content">
+        <article id="article">
+            <ul class="news_list">
+                <FOREACH name="newsList" item="news">
+                    <PHP>
+                        $dateStr = date('Y m.d',$news['time']);
+                    </PHP>
+                    <li><a href="{:U('article').'&id='.$news['id']}">{$news.title}</a><span>{$dateStr}</span></li>
+                </FOREACH>
+            </ul>
+            <ul id="indicator">
+                <IF condition="$page gt 1">
+                    <li><a href="{:U('result').'&page='.($page-1)}">上一页</a></li>
+                </IF>
+                <IF condition="$page lt $allPages">
+                    <li><a href="{:U('result').'&page='.($page+1)}">下一页</a></li>
+                </IF>
+                <li class="deletename">共计{$allPages}页 跳转至</li>
+                <li class="deletename">
+                    <select id="page" onchange="redirectNews(this.value)">
+                        <FOR start="1" end="$allPages+1" name="i">
+                            <IF condition="$i eq $page">
+                                <option value="{$i}" selected="selected">{$i}</option>
+                                <ElSE />
+                                <option value="{$i}">{$i}</option>
+                            </IF>
+                        </FOR>
+                    </select>页
+                </li>
+
+            </ul>
+        </article>
+        <aside>
+            <ul class="rec1">
+                <li class="title">推荐阅读</li>
+                <FOREACH name="recommendNewsList" item="news">
+                    <li><a href="{:U('article').'&id='.$news['id']}">{$news.title}</a></li>
+                </FOREACH>
+            </ul>
+            <ul class="rec2">
+                <li class="title">成绩发布</li>
+                <FOREACH name="recommendGradeList" item="sports">
+                    <li><a href="{:U('grade').'&id='.$sports['id']}">{$sports.title}项目成绩</a></li>
+                </FOREACH>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <p>© 2010-2015<a href="http://www.eeyes.net"> e瞳网 </a>eeYes .Net版权所有</p>
+    </footer>
+</body>
+</html>
