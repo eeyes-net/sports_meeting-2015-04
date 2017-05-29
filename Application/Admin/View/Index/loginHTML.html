@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>管理员登陆</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 微软雅黑;
+        }
+
+        body {
+            background: #a1ccd4;
+        }
+
+        div {
+            width: 380px;
+            height: 300px;
+            position: absolute;
+            margin-left: -190px;
+            margin-top: -150px;
+            left: 50%;
+            top: 40%;
+            text-align: center;
+            background: #40bad2;
+        }
+
+        span {
+            background: url(logo.png) no-repeat center;
+            display: block;
+            width: 88px;
+            height: 88px;
+            border-radius: 50px;
+            background-color: #ddd;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+
+        input {
+            border: 0;
+            height: 2em;
+            margin-top: 20px;
+        }
+
+        input:focus,
+        input:hover {
+            box-shadow: 0 0 9px #c261ff;
+        }
+
+        input[type=password] {
+            margin-left: 15px;
+        }
+
+        input[type=submit] {
+            padding: 3px;
+            width: 60px;
+            border-radius: 3px;
+            background: #6ea4af;
+            cursor: pointer;
+            color: #fff;
+            margin-top: 38px;
+        }
+
+        label {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span></span>
+        <form action="{:U('login')}" method="post">
+            <label for="text">用户名：</label><input type="text" name="name" /><br />
+            <label for="password">密码：</label><input type="password" name="password" /><br />
+            <input type="submit" value="提交" />
+        </form>
+    </div>
+</body>
+</html>

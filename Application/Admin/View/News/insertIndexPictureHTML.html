@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>首页图片</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/admin.css">
+</head>
+<body>
+    <div id="wrapper">
+        <form action="{:U('insertIndexPicture')}" method="post" enctype="multipart/form-data">
+
+            <FOR start="0" end="$picNum">
+                图片：<input type="file" name="picture[]" /><br />
+                描述：<input type="text" name="description[]" /><br />
+            </FOR>
+            <input type="hidden" name="type" value="{$picType}" />
+            <input type="submit" value="提交" />
+        </form>
+        <div id="button">
+            <a href="{:U('adminNavigationHTML')}">返回首页</a>
+        </div>
+    </div>
+
+</body>
+</html>

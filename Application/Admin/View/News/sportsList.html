@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>体育项目列表</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/admin.css">
+</head>
+<body>
+    <div id="wrapper_full">
+        <a href="{:U('createNewSportHTML')}">创建新体育项目</a><br />
+        <FOREACH name="sportsList" item="sports">
+            {$sports.name} <a href="{:U('rankList').'&id='.$sports['id']}">查看成绩记录</a>|<a href="{:U('insertRankHTML').'&id='.$sports['id']}">添加成绩记录</a>|<a href="{:U('deleteSport').'&id='.$sports['id']}">删除该体育项目</a> <br />
+        </FOREACH>
+        <IF condition="$page gt 1">
+            <a href="{:U('sportsList').'&page='.($page-1)}">上一页</a>|
+        </IF>
+        <IF condition="$page lt $allPages">
+            <a href="{:U('sportsList').'&page='.($page+1)}">下一页</a>
+        </IF>
+        <div id="button">
+            <a href="{:U('adminNavigationHTML')}">返回首页</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>添加体育项目</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/admin.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>添加体育项目</h1>
+        <form action="{:U('createNewSport')}" method="post">
+            项目名称：<input type="text" name="name" /><br />
+            组号：<input type="text" name="number" value="第一组" id="cnsh"><br />
+            比赛日期：<input type="text" name="year" value="2015" class="time" />年<input type="text" name="month" value="4" class="time" />月<input type="text" name="day" class="time" />日<br />
+            <input type="submit" value="提交" />
+        </form>
+        <div id="button">
+            <a href="{:U('adminNavigationHTML')}">返回首页</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

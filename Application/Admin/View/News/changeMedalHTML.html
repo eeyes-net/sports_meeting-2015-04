@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>奖牌数</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/web/css/admin.css">
+</head>
+<body>
+    <div id="wrapper_full">
+        <h1>奖牌数</h1>
+        <form action="{:U('changeMedal')}" method="post">
+            <table>
+                <tr>
+                    <th>书院</th>
+                    <th>金牌</th>
+                    <th>银牌</th>
+                    <th>铜牌</th>
+                </tr>
+                <FOREACH name="colleges" item="college">
+                    <tr>
+                        <th>{$college.name}</th>
+                        <th><input name="gold[]" value="{$college.gold}" /></th>
+                        <th><input name="silver[]" value="{$college.silver}" /></th>
+                        <th><input name="copper[]" value="{$college.copper}" /></th>
+                    </tr>
+                    <input type="hidden" name="id[]" value="{$college.id}" />
+                </FOREACH>
+            </table>
+            <input type="submit" value="提交" />
+        </form>
+        <div id="button">
+            <a href="{:U('adminNavigationHTML')}">返回首页</a>
+        </div>
+    </div>
+
+</body>
+</html>
