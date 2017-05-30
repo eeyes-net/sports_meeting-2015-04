@@ -1,0 +1,39 @@
+.news_list{
+	margin: 40px;
+	margin-top: 30px;
+}
+.news_list li{
+	margin: 6px;
+	padding: 5px;
+	cursor: pointer;
+}
+.news_list a{
+	color: #000;
+	text-decoration: none;
+
+}
+article li:hover{
+	background: #ddd;
+}
+.news_list li span{
+	color: #666;
+	font-size: 14px;
+	float: right;
+}
+#indicator{
+	position: absolute;
+	bottom: 48px;
+	left: 65px;
+}
+#indicator li{
+	padding: 8px;
+	height: 15px;
+	text-align: center;
+	line-height: 15px;
+	float: left;
+	margin-left: 20px;
+	background: #037f81;
+	color: #fff;
+	cursor: pointer;
+	/*width: 80px;*/
+}

@@ -1,0 +1,25 @@
+.content{
+	padding-bottom: 30px;
+	padding-top: 20px;
+	font-size: 15px;
+}
+.content table.medal{
+	width: 960px;
+	margin:0 auto;
+	text-align: center;
+	line-height: 35px;
+	border-collapse: collapse;
+}
+.content table.medal tr{
+	width: 960px;
+	margin: 0 auto;
+}
+.content table.medal tr th{
+	border: 1px solid #ddd;
+}
+.content table.medal tr th img{
+	width: 50px;
+}
+.content table.medal tr td{
+	border: 1px solid #ddd;
+}

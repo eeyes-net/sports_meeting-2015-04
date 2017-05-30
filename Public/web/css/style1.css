@@ -1,0 +1,143 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-family: 微软雅黑;
+}
+body{
+	background: #d2d2d2;
+}
+header{
+	background: url(../images/banners-3.png);
+	width: 100%;
+	height:270px;
+	-webkit-background-size:cover;
+	-ms-background-size:cover;
+	-moz-background-size:cover;
+	background-size:cover;
+	background-position: center;
+}
+header div{
+	width: 992px;
+	margin: 0 auto;
+}
+img#logo{
+	width: 100px;
+	display: block;
+	margin: 0 auto;
+}
+nav{
+	margin-bottom: 80px;
+	width: 100%;
+	-webkit-transform: translateZ(0);
+}
+nav li{
+	text-align:center;
+	background: #037f81;
+	height: 40px;
+	line-height: 40px;
+	float:left;
+	width: 11.111%;
+	cursor: pointer;
+}
+nav li:hover{
+	background: #009fa2;
+}
+nav a{
+	text-decoration: none;
+	color: #fff;
+	display: block;
+}
+.content{
+	width: 990px;
+	margin: 0 auto;
+	background: #fff;
+	border: 0;
+	border-radius: 10px;
+	position: relative;
+}
+article{
+	width: 700px;
+	display: inline-block;
+	padding: 20px;
+	padding-bottom: 40px;
+}
+article h1{
+	margin: 27px;
+	text-indent: 28px;
+}
+article h2{
+	font-size: 13px;
+	color: #666;
+	margin: 10px;
+	text-indent: 60px;
+}
+article p{
+	margin: 35px;
+	text-indent: 2em;
+}
+article img{
+	width: 500px;
+	display: block;
+	margin: 0 auto;
+}
+aside{
+	width: 250px;
+	background: #fff;
+	float: right;
+	margin-top: 20px;
+}
+aside a{
+	color: #000;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.title{
+	font-size: 14px;
+	font-weight: bold;
+	background: url(../images/Watches.png) no-repeat;
+	background-size: 20px;
+	background-position: 0 3px;
+	padding-left: 23px;
+}
+aside ul li{
+	line-height:2em;
+}
+aside a:hover{
+	text-decoration: underline;
+}
+.rec1{
+	margin-top: 40px;
+}
+.rec2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+span#time{
+	color: #666;
+	float: right;
+	margin-right: 40px;
+	font-size: 13px;
+}
+footer{
+	background: #037f81;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	margin-top: 40px;
+	color: #fff;
+}
+footer a{
+	color: #fff;
+}
+.fix{
+	position: fixed;
+	top: 0;
+	z-index: 5;
+}
+.content::after{
+	content: "";
+	display: block;
+	clear: both;
+};

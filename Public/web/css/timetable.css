@@ -1,0 +1,80 @@
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+.content{
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.content div{
+	width: 905px;
+	margin: 0 auto;
+}
+.time td,.time th{
+	vertical-align:middle;
+	border:1px solid #ddd;
+	text-align: center;
+}
+.time tr{
+	height: 30px;
+}
+.time tr>td:first-child {
+	background-color:white;
+}
+.add{
+	background-color:white;
+}
+.final{
+	background-color:orange;
+}
+.pre{
+	background-color:#80FFFF;
+}
+
+.special{
+	background-color:#3391FF;
+}
+.pd5{
+	padding:0 5px!important;
+}
+
+.medal td,.medal th{
+	border:#ddd 1px solid;
+}
+a.uk-overlay-caption:hover{
+	color:red;
+	text-decoration:none;
+}
+.icon{
+	width:20px;
+	height:20px;
+	margin-right:10px;
+}
+.uk-article-divider{
+	margin-top:-10px!important;
+}
+.begin{
+	text-indent:24px;
+}
+.live-list{
+	color:white;
+	padding:0 10px;
+	margin-left:10px;
+}
+.lh30{
+	line-height:30px;
+}
+.jiathis{
+	opacity:0.6;
+}
+.uk-article-meta li{
+	float:left;
+	padding:0 10px;
+}
+.pdl20{
+	padding-left:20px;
+}
+.mh265{
+	max-height:265px;
+	overflow:hidden;
+}

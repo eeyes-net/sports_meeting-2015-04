@@ -1,0 +1,37 @@
+article ul{
+	margin-top: 17px;
+}
+article ul li{
+	text-align: center;
+	width: 200px;
+	height: 200px;
+	margin-left: 30px;
+	float: left;
+	position: relative;
+	z-index: 0;
+}
+article img{
+	width: 100%;
+	display: block;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+/*article li::before{
+	content: '';
+	position: absolute;
+	left: 9px;
+	top: 26px;
+	width: 187px;
+	height: 99px;
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+	z-index: -1;
+	transform:rotate(4deg);
+	-webkit-transform:rotate(4deg);
+	-o-transform:rotate(4deg);
+	-moz-transform:rotate(4deg);
+	-ms-transform:rotate(4deg);
+}*/
+article a{
+	color: #000;
+	text-decoration: none;
+}

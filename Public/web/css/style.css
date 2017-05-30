@@ -1,0 +1,146 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style:none;
+	text-decoration: none;
+	font-family: 微软雅黑;
+}
+html{
+	height: 100%;/*why?*/
+}
+a{transition:all .5s;}
+body{
+	background-color: #dcd4d5;
+	height: 100%;
+}
+header{
+	text-align: center;
+	background-image: url(../images/test.jpg);
+	background-size: cover;/**/
+	background-position: center center;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+}
+header img.ad{
+	top: -1999px;
+	left: 0px;
+	position: absolute;
+}
+header img.ab{
+	top: -1999px;
+	left: 20000px;
+	position: absolute;
+}
+#sch_logo{
+	width:200px;
+}
+#e_logo{
+	width: 100px;
+	margin-top: 55px;
+}
+#title{
+	width:540px;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+}
+#down_arrow{
+	position: absolute;
+	right: 11890px;
+	bottom: 1150px;
+	cursor: pointer;
+	margin-left: -50px;
+}
+#down_arrow:focus,
+#down_arrow:hover{
+	-webkit-transform:scale(1.1);
+	-moz-transform:scale(1.1);
+	-o-transform:scale(1.1);
+	transform:scale(1.1);
+	-webkit-transition:-webkit-transform 0.3s ease;
+	-moz-transition:transform 0.3s ease;
+	-o-transition:transform 0.3s ease;
+	transition:transform 0.3s ease;
+}
+nav{
+	width: 100%;
+}
+nav ul{
+	padding: 0;
+	margin: 0;
+}
+nav li{
+	text-align:center;
+	background: #037f81;
+	height: 40px;
+	line-height: 40px;
+	float:left;
+	width: 11.111%;
+	cursor: pointer;
+}
+nav a{
+	text-decoration: none;
+	color: #fff;
+	display: block;
+}
+nav a:hover{
+	text-decoration: none!important;
+	color: #fff!important;
+	background: #009fa2;
+	transition:all 0.5s;
+	-webkit-transition:all 0.5s;
+}
+#main_wrapper{
+	width: 980px;
+	margin: 0 auto;
+	margin-top: 18px;
+}
+.medal{
+	border: 0;
+	border-collapse: separate;
+	border-spacing: 0px;
+	color: #fff;
+}
+.medal tr:nth-child(1){
+	background-color: #037f81;
+	font-size: 15px;
+}
+.medal tr:nth-child(1) th{
+	text-align: center;
+}
+.medal tr:nth-child(3){
+	background: #fde368;
+}
+.medal tr:nth-child(2){
+	background: #ff6766;
+}
+.medal tr:nth-child(4){
+	background: #bc68fc;
+}
+.medal tr:nth-child(5){
+	background: #8f69fd;
+}
+.medal tr:nth-child(6){
+	background: #69c3ff;
+}
+footer{
+	background: #037f81;
+	line-height: 150px;
+	text-align: center;
+	margin-top: 25px;
+	color: #fff;
+}
+footer a{
+	color: #fff;
+	text-decoration: underline;
+}
+footer p{
+	margin-bottom: 0;
+}
+.fix{
+	position: fixed;
+	top: 0;
+	z-index: 4;
+}

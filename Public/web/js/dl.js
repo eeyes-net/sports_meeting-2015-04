@@ -1,0 +1,21 @@
+$(document).ready(function(){
+	var wdHeight=$(window).height();
+	var liHeight1=$('#newsLi').height()+48;
+	var liHeight2=$('#resuLi').height()+48;
+	var liHeight3=$('#starLi').height()+48;
+	var liHeight4=$('#readLi').height()+48;
+	var tiWidth=$('#title').width()/2;
+	var eWidth=$('#e_logo').width()/2;
+	var scWidth=$('#sch_logo').width()/2;
+	// $('header').css({'height':wdHeight+'px'});
+	$('#title').css({'margin-left':-tiWidth+'px'});
+	$('#e_logo').css({'margin-left':-eWidth+'px'});
+	$('#sch_logo').css({'margin-left':-scWidth+'px'});
+	$('#newsLi div').css({'height':liHeight1+'px'});
+	$('#resuLi div').css({'height':liHeight2+'px'});
+	$('#starLi div').css({'height':liHeight3+'px'});
+	$('#readLi div').css({'height':liHeight4+'px'});
+	var mainHeight=$('#main_wrapper').height();
+	mainHeight+=36;
+	$('#main_wrapper').css({'height':mainHeight});
+});
