@@ -1,3 +1,9 @@
 /ThinkPHP
 /Application/Runtime
 .idea
+/Public/file
+/Public/news
+/ue/*
+!/ue/php
+/ue/php/*
+!/ue/php/controller.php
