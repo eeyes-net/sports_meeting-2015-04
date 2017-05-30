@@ -76,8 +76,11 @@ class IndexController extends Controller
         $Rank = M('rank');
         $Sports = M('sports');
         $sports = $Sports->where("id = '%d'", array($id))->find();
-        $list = $Rank->table('sportsmeeting_rank rank,sportsmeeting_college college,sportsmeeting_sports sports')
-            ->where("rank.sports = '%d' and rank.college = college.id and sports.id = rank.sports", array($id))->field('rank.id as id,rank.number as number,rank.name as name,college.name as college,rank.orders as orders,rank.score as score,rank.rank as rank,rank.record as record,rank.standard as standard,rank.remark as remark')->order('rank.rank')->select();
+        $list = $Rank->table('rank rank,college college,sports sports')
+            ->where("rank.sports = '%d' and rank.college = college.id and sports.id = rank.sports", array($id))
+            ->field('rank.id as id,rank.number as number,rank.name as name,college.name as college,rank.orders as orders,rank.score as score,rank.rank as rank,rank.record as record,rank.standard as standard,rank.remark as remark')
+            ->order('rank.rank')
+            ->select();
         $this->assign('page', $page);
         $this->assign('allPages', $allPages);
         $this->assign('rankList', $list);
